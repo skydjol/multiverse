@@ -1,0 +1,11 @@
+{
+  "name": "elasticsearch",
+  "version": "1.0.0",
+  "website": "http://mylittlepony.com",
+  "maintainer": "support@mylittlepony.com",
+  "description": "ElasticSearch framework for DCOS",
+  "framework": true,
+  "preInstallNotes": "JUST DO IT!!!",
+  "postInstallNotes": "I saw what you did there...",
+  "tags": [ "mesos", "framework" ]
+}
