@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "marathon": {
+      "additionalProperties": false,
+      "description": "Elasticsearch specific configuration properties",
+      "type": "object",
+      "properties": {
+        "cpus": {
+          "default": 1.0,
+          "description": "CPU shares to allocate to each Marathon instance",
+          "minimum": 0.1,
+          "type": "number"
+        },
+        "mem": {
+          "default": 1024,
+          "description": "Memory (MB) start size for the JVM heap. This number should be be less or equals than the jvm-heap-max",
+          "minimum": 256,
+          "type": "number"
+        },
+        "instances": {
+          "default": 1,
+          "description": "Number of Marathon instances to run",
+          "minimum": 1,
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
