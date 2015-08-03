@@ -1,11 +1,16 @@
 {
   "name": "elasticsearch",
   "version": "1.0.0",
-  "website": "http://mylittlepony.com",
-  "maintainer": "support@mylittlepony.com",
-  "description": "ElasticSearch framework for DCOS",
+  "website": "https://github.com/mesos/elasticsearch",
+  "maintainer": "support@mesosphere.com",
+  "description": "Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents.",
   "framework": true,
-  "preInstallNotes": "JUST DO IT!!!",
-  "postInstallNotes": "I saw what you did there...",
-  "tags": [ "mesos", "framework" ]
+  "preInstallNotes": "The Elasticsearch DCOS Service implementation is alpha and there may be bugs, incomplete features, incorrect documentation or other discrepancies. We recommend a cluster of at least 3 servers, with at least 4GB of memory per machine and 100GB of hard drive.",
+  "postInstallNotes": "The Elasticsearch DCOS Service is installed:\n  docs   - https://github.com/mesos/elasticsearch\n  issues - https://github.com/mesos/elasticsearch/issues",
+  "tags": [ "framework", "search", "database", "java" ],
+  "images": {
+    "icon-small": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-small.png",
+    "icon-medium": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-medium.png",
+    "icon-large": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-large.png"
+  }
 }

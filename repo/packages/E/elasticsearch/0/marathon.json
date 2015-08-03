@@ -2,15 +2,16 @@
   "id": "elasticsearch-mesos-scheduler",
   "container": {
     "docker": {
-      "image": "tpolekhin/es-scheduler",
-      "forcePullImage": true,
-      "network": "HOST"
+      "image": "abhayagarwal/elasticsearch-scheduler:0.1.0",
+      "network": "HOST",
+      "forcePullImage": true
     }
   },
-  "args": ["-zk", "zk://leader.mesos:2181/mesos", "-n", "3"],
-  "cpus": 1,
-  "mem": 1024,
-  "instances": 1,
+  "args": ["-zk", "zk://leader.mesos:2181/mesos", "-n", "3", "-m", "8080"],
+  "ports": [8080],
+  "cpus": {{marathon.cpus}},
+  "mem": {{marathon.mem}},
+  "instances": {{marathon.instances}},
   "healthChecks": [
     {
       "protocol": "COMMAND",

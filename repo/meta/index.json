@@ -1,6 +1,21 @@
 {
   "packages":[
     {
+      "currentVersion":"1.0.0",
+      "description":"Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents.",
+      "framework":true,
+      "name":"elasticsearch",
+      "tags":[
+        "framework",
+        "search",
+        "database",
+        "java"
+      ],
+      "versions":{
+        "1.0.0":"0"
+      }
+    },
+    {
       "currentVersion":"0.0.1",
       "description":"Hue Web Interface to Hadoop",
       "framework":false,
