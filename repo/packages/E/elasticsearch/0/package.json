@@ -1,16 +1,23 @@
 {
   "name": "elasticsearch",
-  "version": "1.0.0",
-  "website": "https://github.com/mesos/elasticsearch",
-  "maintainer": "support@mesosphere.com",
-  "description": "Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents.",
+  "version": "0.2.0",
+  "tags": ["dcos", "mesos", "framework", "elasticsearch", "elastic"],
   "framework": true,
-  "preInstallNotes": "The Elasticsearch DCOS Service implementation is alpha and there may be bugs, incomplete features, incorrect documentation or other discrepancies. We recommend a cluster of at least 3 servers, with at least 4GB of memory per machine and 100GB of hard drive.",
-  "postInstallNotes": "The Elasticsearch DCOS Service is installed:\n  docs   - https://github.com/mesos/elasticsearch\n  issues - https://github.com/mesos/elasticsearch/issues",
-  "tags": [ "framework", "search", "database", "java" ],
+  "maintainer": "pnw@trifork.com",
+  "description": "DCOS implementation of the Mesos-Elasticsearch framework",
+  "scm": "https://github.com/mesos/elasticsearch.git",
+  "website": "https://github.com/mesos/elasticsearch",
   "images": {
-    "icon-small": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-small.png",
+    "icon-large": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-large.png",
     "icon-medium": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-medium.png",
-    "icon-large": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-large.png"
-  }
+    "icon-small": "https://downloads.mesosphere.io/elasticsearch/assets/icon-service-elasticsearch-small.png"
+  },
+  "preInstallNotes":"The ElasticSearch DCOS Service implementation is alpha and there may be bugs, incomplete features, incorrect documentation or other discrepancies.",
+  "postInstallNotes": "Elasticsearch is staging. Check Marathon and the ES management front-end for status.",
+  "licenses": [
+    {
+      "name": "Apache License Version 2.0",
+      "url": "https://raw.githubusercontent.com/mesos/elasticsearch/master/LICENSE"
+    }
+  ]
 }

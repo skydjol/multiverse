@@ -1,22 +1,32 @@
 {
-  "id": "elasticsearch-mesos-scheduler",
-  "container": {
-    "docker": {
-      "image": "abhayagarwal/elasticsearch-scheduler:0.1.0",
-      "network": "HOST",
-      "forcePullImage": true
-    }
-  },
-  "args": ["-zk", "zk://leader.mesos:2181/mesos", "-n", "3", "-m", "8080"],
-  "ports": [8080],
-  "cpus": {{marathon.cpus}},
-  "mem": {{marathon.mem}},
-  "instances": {{marathon.instances}},
+  "id": "{{elasticsearch.framework-name}}",
+  "cpus": {{elasticsearch.scheduler.cpu}},
+  "mem": {{elasticsearch.scheduler.ram}},
+  "ports": [0],
+  "instances": {{elasticsearch.scheduler.instances}},
   "healthChecks": [
     {
-      "protocol": "COMMAND",
-      "command": { "value": "ps aux | grep scheduler" },
-      "maxConsecutiveFailures": 3
+      "gracePeriodSeconds": 120,
+      "intervalSeconds": 30,
+      "maxConsecutiveFailures": 0,
+      "path": "/",
+      "portIndex": 0,
+      "protocol": "HTTP",
+      "timeoutSeconds": 5
     }
-  ]
+  ],
+  "args": ["--zookeeperMesosUrl", "{{mesos.master}}", "--elasticsearchNodes", "{{elasticsearch.executor.instances}}", " --webUiPort", "{{elasticsearch.port}}", "--elasticsearchRam", "{{elasticsearch.executor.ram}}"],
+  "env": {
+    "JAVA_OPTS": "{{elasticsearch.scheduler.java-heap}}"
+  },
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "abhayagarwal/elasticsearch-scheduler",
+      "network": "HOST",
+      "forcePullImage": {{elasticsearch.forcePullImage}}
+    }
+  },
+  "ports": [{{elasticsearch.port}}],
+  "requirePorts": true
 }
