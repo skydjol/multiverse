@@ -1,18 +1,19 @@
 {
   "packages":[
     {
-      "currentVersion":"1.0.0",
-      "description":"Elasticsearch is a search server based on Lucene. It provides a distributed, multitenant-capable full-text search engine with a RESTful web interface and schema-free JSON documents.",
+      "currentVersion":"0.2.0",
+      "description":"DCOS implementation of the Mesos-Elasticsearch framework",
       "framework":true,
       "name":"elasticsearch",
       "tags":[
+        "dcos",
+        "mesos",
         "framework",
-        "search",
-        "database",
-        "java"
+        "elasticsearch",
+        "elastic"
       ],
       "versions":{
-        "1.0.0":"0"
+        "0.2.0":"0"
       }
     },
     {
